@@ -4,17 +4,15 @@ let player = 'X';
 const gameboard = Array(9);
 gameboard.fill('');
 const bloco = document.querySelectorAll("div.bloco");
-const modal = document.querySelector('.modalNone');
-const textModal = document.querySelector('.modalNone>p');
 const btnReset = document.querySelector('.btnReset');
 const tPX = document.querySelector('#pontX');
 const tPO = document.querySelector('#pontO');
 const msg = document.querySelector('#msg');
 const btnClose = document.querySelector('#close');
 const placar = document.querySelector('.placarNone');
-const showPlacar = document.querySelector('#showPlacar');
 const btnMenu = document.querySelector('#btnMenu');
 const menu = document.querySelector('.menuNone');
+const btnShowPlacar = document.querySelector('#btnShowPlacar');
 
 
 const winPositions = [
@@ -31,12 +29,16 @@ const winPositions = [
 let playerX = 0;
 let playerO = 0;
 
-showPlacar.addEventListener('click', ()=>{
-    placar.classList.add('placar');
+function showModalPlacar(){
+    placar.classList.toggle('placar');
+}
+
+btnShowPlacar.addEventListener('click', ()=>{
+    showModalPlacar();
 })
 
 btnClose.addEventListener("click", ()=>{
-    placar.classList.remove('placar');
+    showModalPlacar()
 })
 
 function checkWin(){
@@ -44,9 +46,7 @@ function checkWin(){
     for(const condition of winPositions){
         const[a, b, c] = condition;
         if (gameboard[a] && gameboard[a] === gameboard[b] && gameboard[a] === gameboard[c]) {
-            modal.classList.add('modal');
             btnReset.classList.add('btnResetNone');
-            textModal.innerHTML = `Jogador ${gameboard[a]} venceu!`;
 
             if(gameboard[a] == "X"){
                 playerX += 1;
@@ -56,7 +56,7 @@ function checkWin(){
                 tPO.innerHTML = playerO;
             }
 
-            msg.textContent = 'Parece que alguém perdeu... Tenha uma revanche!!'
+            msg.textContent = `Você perdeu Jogador ${player}... Tenha uma revanche!!`
         }
     }
 }
@@ -90,9 +90,8 @@ btnReset.addEventListener('click', ()=>{
         bloco[i].classList.remove('blocoO');
     });
 
-    modal.classList.remove('modal');
     msg.textContent = 'Comece a sua jogada!';
-    btnReset.classList.remove('btnResetNone');
+    btnReset.classList.remove('btnResetNone')
 });
 
 
