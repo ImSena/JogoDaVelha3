@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jogo da Velha 3</title>
+    <link rel="stylesheet" href="src/css/style.css">
+</head>
+
+<body>
+    <header>
+        <nav>
+            <div>
+                <h1>Jogo da Velha 3</h1>
+            </div>
+
+            <ul class="menuNone">
+                <li><a href="regras">Regras</a></li>
+                <li id="placarMobile"><a id="showPlacar">placar</a></li>
+                <li><a href="">Resetar</a></li>
+            </ul>
+
+            <div class="menuResponsivoNone">
+                <button id="btnMenu">Menu</button>
+            </div>
+        </nav>
+    </header>
+    <main>
+
+        <p id="msg">Comece a sua jogada!</p>
+
+        <div id="table">
+            <div class="bloco"></div>
+            <div class="bloco"></div>
+            <div class="bloco"></div>
+            <div class="bloco"></div>
+            <div class="bloco"></div>
+            <div class="bloco"></div>
+            <div class="bloco"></div>
+            <div class="bloco"></div>
+            <div class="bloco"></div>
+        </div>
+        
+        <button class="btnReset">Revanche!</button>
+
+        <div class="modalNone">
+
+            <h2>Vitória!!</h2>
+
+            <p></p>
+            
+        </div>
+
+        <div class="placarNone">
+            <button id="close">X</button>
+            
+            <div id="pontuacao">
+                <div class="cxPontuacao">
+                    <p class="tPX">Jogador X</p>
+                    <p id="pontX" class="tPX">0</p>
+                </div>
+                <h2>VS</h2>
+                <div class="cxPontuacao">
+                    <p class="tPO">Jogador O</p>
+
+                    <p id="pontO" class="tPO">0</p>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    
+
+    <script src="src/js/script.js"></script>
+</body>
+
+</html>
