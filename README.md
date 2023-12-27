@@ -37,5 +37,5 @@ Sinta-se à vontade para compartilhar o jogo com amigos e familiares. Boa sorte 
 
 ---
 
-## Desenvolvedor: - [@Bruno Sena](www.linkedin.com/in/bruno-sena-a6120417b)**
+## Desenvolvedor: - [@Bruno Sena](www.linkedin.com/in/bruno-sena-a6120417b)
 
